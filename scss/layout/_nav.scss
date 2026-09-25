@@ -1,0 +1,27 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.mi-navbar {
+  background-color: $color-primario !important;
+
+  .nav-link {
+    color: #fff !important;
+    border-radius: 5px;
+    @include transition;
+
+    &:hover {
+      background-color: $color-secundario;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+    &:focus {
+      outline: none;
+      background-color: $color-secundario;
+      box-shadow: 0 0 0 3px rgba(153, 50, 204, 0.4);
+    }
+    &:active {
+      background-color: $color-acento;
+      transform: scale(0.95);
+    }
+  }
+}

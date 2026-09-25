@@ -1,0 +1,9 @@
+@use '../utilities/variables' as *;
+
+body {
+  font-family: $fuente-principal;
+}
+
+.lista-footer a {
+  text-decoration: none;
+}

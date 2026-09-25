@@ -1,0 +1,35 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.pagos {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  grid-template-areas: "pago1" "pago2" "pago3";
+  margin-top: 16px;
+
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "pago1 pago2 pago3";
+  }
+
+  li {
+    background-color: $color-blanco;
+    color: $color-negro;
+    padding: 14px;
+    border-radius: 100px;
+    @include flex-center;
+    border: 1px solid $color-borde;
+    @include transition;
+
+    &:nth-child(1) { grid-area: pago1; }
+    &:nth-child(2) { grid-area: pago2; }
+    &:nth-child(3) { grid-area: pago3; }
+
+    &:hover {
+      background-color: $color-primario;
+      color: $color-blanco;
+      transform: scale(1.05);
+    }
+  }
+}

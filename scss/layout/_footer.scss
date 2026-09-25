@@ -1,0 +1,45 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+footer {
+  background-color: $color-primario;
+  color: #fff;
+  padding: 30px 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "redes" "copy";
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+  }
+}
+.contenedor-footer { grid-area: redes; }
+.copyright { grid-area: copy; }
+
+.lista-footer {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+
+  a {
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    @include transition;
+
+    &:hover {
+      background-color: $color-secundario;
+      text-decoration: underline;
+    }
+    &:focus {
+      outline: none;
+      background-color: $color-secundario;
+      box-shadow: 0 0 0 3px rgba(153, 50, 204, 0.4);
+    }
+  }
+}
